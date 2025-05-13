@@ -22,6 +22,10 @@ class EmojiIndexer:
         self.build_index()
         self.save_index()
 
+  def is_index_loaded(self):
+    """Check if the index is loaded"""
+    return len(self.inverted_index) > 0
+
     
   def load_emoji_data(self):
     """Load emoji data from JSON file"""
