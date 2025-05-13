@@ -1,3 +1,6 @@
+#  Copyright (c) 2025 Keshav Prajapati
+#  Licensed under the MIT license. See LICENSE file in the project root for details.
+
 # sys for cmd args
 import sys
 import pyperclip # For clipboard operations
@@ -182,7 +185,7 @@ class GlyphGrabMainWindow(QMainWindow):
     main_layout.addWidget(self.scroll_area)
     
     # Copyright Label
-    copyright_label = QLabel("\u00A9 2025 Keshav PJ")
+    copyright_label = QLabel("\u00A9 2025 Keshav Prajapati")
     copyright_label.setAlignment(Qt.AlignCenter)
     copyright_label.setFont(QFont("Arial", 10))
     copyright_label.setStyleSheet("color: #888888; padding: 10px 0 0 0;")

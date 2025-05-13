@@ -1,3 +1,5 @@
+#  Copyright (c) 2025 Keshav Prajapati
+#  Licensed under the MIT license. See LICENSE file in the project root for details.
 import os
 import json
 from pathlib import Path
