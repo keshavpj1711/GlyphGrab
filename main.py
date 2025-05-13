@@ -181,6 +181,13 @@ class GlyphGrabMainWindow(QMainWindow):
     self.scroll_area.setWidget(self.scroll_content)
     main_layout.addWidget(self.scroll_area)
     
+    # Copyright Label
+    copyright_label = QLabel("\u00A9 2025 Keshav PJ")
+    copyright_label.setAlignment(Qt.AlignCenter)
+    copyright_label.setFont(QFont("Arial", 10))
+    copyright_label.setStyleSheet("color: #888888; padding: 10px 0 0 0;")
+    main_layout.addWidget(copyright_label)
+    
     # Set up the central widget
     container = QWidget()
     container.setLayout(main_layout)
@@ -366,7 +373,7 @@ class GlyphGrabMainWindow(QMainWindow):
   def debounce_search(self):
     # Reset the timer on each keystroke
     self.search_timer.stop()
-    self.search_timer.start(200) # 200ms delay before searching
+    self.search_timer.start(400) # 200ms delay before searching
     
     # Immediately handle empty search box case for better responsiveness
     if not self.search_bar.text():
@@ -399,6 +406,20 @@ class GlyphGrabMainWindow(QMainWindow):
   def update_search_results(self, results):
     # This function is called when the search is complete
     self.display_emojis(self.all_grid, results)
+    
+  def keyPressEvent(self, event):
+    if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+      # Check if search is active and results are displayed
+      if self.search_bar.text():
+        # Get the first emoji button in all_grid
+        if self.all_grid.count() > 0:
+          first_btn = self.all_grid.itemAt(0).widget()
+          if first_btn:
+            emoji = first_btn.text()
+            self.copy_emoji(emoji)
+            return
+    # Call the base class method for other keys
+    super(GlyphGrabMainWindow, self).keyPressEvent(event)
   
   def copy_emoji(self, emoji):
     # Copy to clipboard
