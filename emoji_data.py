@@ -4,8 +4,12 @@ import json
 import os
 from indexer import EmojiIndexer
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+emoji_json_path = os.path.join(BASE_DIR, "data", "emoji-en-US.json")
+index_json_path = os.path.join(BASE_DIR, "data", "index", "inverted_index.json")  # "data/index/inverted_index.json"
+
 class EmojiData:
-  def __init__(self, json_path="data/emoji-en-US.json"):
+  def __init__(self, json_path=emoji_json_path):
     self.json_path = json_path
     self.emojis = {}
     self.emoji_keys = []
@@ -36,7 +40,7 @@ class EmojiData:
     self.indexer = EmojiIndexer(self.json_path)
     
     # Try to load existing index, don't build if not available
-    index_path = "data/index/inverted_index.json"
+    index_path = index_json_path
     if os.path.exists(index_path):
       self.indexer.load_index(index_path)
     

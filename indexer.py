@@ -5,14 +5,19 @@ import os
 from collections import defaultdict
 import re
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+emoji_json_path = os.path.join(BASE_DIR, "data", "emoji-en-US.json")
+index_dir_path = os.path.join(BASE_DIR, "data", "index")
+index_json_path = os.path.join(BASE_DIR, "data", "index", "inverted_index.json")
+
 class EmojiIndexer:
-  def __init__(self, emoji_json_path="data/emoji-en-US.json"):
+  def __init__(self, emoji_json_path=emoji_json_path):
     self.emoji_json_path = emoji_json_path
     self.emoji_data = {}
     self.inverted_index = defaultdict(list)
     self.load_emoji_data()
     
-    if os.path.exists("data/index/inverted_index.json"):
+    if os.path.exists(index_json_path):
       print("Using the existing index")
       self.load_index()
     else:      
@@ -20,7 +25,7 @@ class EmojiIndexer:
       
   def ensure_index_exists(self):
     """Ensure the index exists, build and save if it doesn't"""
-    if not os.path.exists("data/index/inverted_index.json"):
+    if not os.path.exists(index_json_path):
         self.build_index()
         self.save_index()
 
@@ -57,7 +62,7 @@ class EmojiIndexer:
     self.inverted_index = dict(self.inverted_index)
     print(f"Built inverted index with {len(self.inverted_index)} keywords")
     
-  def save_index(self, index_dir="data/index"):
+  def save_index(self, index_dir=index_dir_path):
     """Save the inverted index to a file"""
     os.makedirs(index_dir, exist_ok=True)
     index_path = os.path.join(index_dir, "inverted_index.json")
