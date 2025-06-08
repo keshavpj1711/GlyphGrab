@@ -1,5 +1,11 @@
 # GlyphGrab
 
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
+[![PyQt5](https://img.shields.io/badge/PyQt5-5.15.11+-orange.svg)](https://redis.io)
+[![PyQt5-Qt5](https://img.shields.io/badge/PyQt5Qt5-5.15.2+-cyan.svg)](https://redis.io)
+[![pyperclip](https://img.shields.io/badge/pyperclip-1.9.0+-brick.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 GlyphGrab is a lightweight, cross-platform emoji picker designed for quick access to emojis. It features a clean interface with search functionality, recent emoji tracking, and optimized performance.
 
 ## Features
