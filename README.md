@@ -16,6 +16,11 @@ GlyphGrab is a **lightweight**, **cross-platform** emoji picker designed for qui
 - **Quick Select**: Press Enter to select the first search result
 - **Performance Optimizations**: Includes caching, debouncing, and lazy loading
 
+## 🎬 Demo
+
+| Windows | macOS | Linux |
+|--------|-------|-------|
+| ![Win](journey/running_in_windows.jpg) | ![Mac](journey/demo-macos.gif) | ![Linux](journey/running_in_arch.png) |
 
 ## Performance Improvements
 
