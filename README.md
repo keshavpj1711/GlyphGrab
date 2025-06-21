@@ -20,7 +20,7 @@ GlyphGrab is a **lightweight**, **cross-platform** emoji picker designed for qui
 
 | Windows | macOS | Linux |
 |--------|-------|-------|
-| ![Win](journey/running_in_windows.jpg) | ![Mac](journey/demo-macos.gif) | ![Linux](journey/running_in_arch.png) |
+| ![Win](journey/running_in_windows.jpg) | ![Mac](journey/macDemo.jpg) | ![Linux](journey/running_in_arch.png) |
 
 ## Performance Improvements
 
